@@ -1,5 +1,8 @@
 // Instanciando objeto weather
-const weather = new Weather( '-23.3712', '-45.2446')
+const weather = new Weather('Boston', 'MA');
+
+// Instanciando objeto UI
+const ui = new UI();
 
 // Pegar clima ao carregar DOM
 document.addEventListener('DOMContentLoaded', getWeather);
@@ -8,7 +11,7 @@ document.addEventListener('DOMContentLoaded', getWeather);
 
 function getWeather() {
     weather.getWeather()
-        .then(results => {console.log(results)})
+        .then(results => {ui.paint(results)})
         .catch(err => {console.log(err)});
 }
 
